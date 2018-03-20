@@ -1,10 +1,40 @@
-<form [formGroup]="formData" (ngSubmit)="onPublish(formData.value)">
+<div class="main-container container-fluid">
+  <div class="container-fluid top-bar h5">
+    Create
+  </div>
 
-  <input type="text" name="title" formControlName="title"><br>
-  <textarea name="description" formControlName="description"></textarea><br>
-  <input type="text" name="tags" formControlName="tags"><br>
-  <input type="text" name="author" formControlName="author"><br>
-  <input type="text" name="image" formControlName="image"><br>
-  <input type="submit" value="Publish">
+  <div class="form-container">
+    <div class="form-holder">
+    <form [formGroup]="formData" (ngSubmit)="onPublish(formData.value)">
+      <div class="form-group">
+        <label class="sr-only" for="title">title</label>
+        <input type="text" name="title" formControlName="title" class="form-control">
+      </div>
 
-</form>
+      <div class="form-group">
+        <label class="sr-only" for="title">title</label>
+        <textarea name="description" formControlName="description" class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only" for="description">description</label>
+        <input type="text" name="tags" formControlName="tags" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only" for="author">author</label>
+        <input type="text" name="author" formControlName="author" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only" for="image">image</label>
+        <input type="text" name="image" formControlName="image" class="form-control">
+      </div>
+
+      <input type="submit" value="Publish" class="btn btn-outline-primary btn-block">
+
+    </form>
+    </div>
+  </div>
+
+</div>

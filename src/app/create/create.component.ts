@@ -26,6 +26,8 @@ export class CreateComponent implements OnInit {
   onPublish(data) {
     this.formValues=data;
     //{"description": "x not Texts", "tags": ["xalle", "xalle 2"], "image": "no image", "author": "sdfsd", "title": "x not"}
+    this.formValues.tags=(this.formValues.tags).split(',');
+    console.log(this.formValues.tags);
     this.articleService.addArticle(this.formValues);
     console.log(this.formValues);
   }

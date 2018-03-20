@@ -1,6 +1,44 @@
-<div class="panels">
+<!--<div class="panels">
   <ng-container *ngFor="let article of articles">
     <h1>{{article.title}}</h1>
     <p>{{article.description}}</p>
   </ng-container>
+</div>-->
+
+<div class="main-container container-fluid">
+  <div class="container-fluid top-bar h5">
+    Home
+  </div>
+<div class="container home-cont">
+  <div class="row">
+    <div class="col-sm-1 col-md-6 col-lg-4" *ngFor="let article of articles">
+      <div class="panel-container">
+        <div class="panel-img-holder">
+          <img [src]="article.image">
+        </div>
+        <div class="panel-content-holder">
+          <div class="panel-heading">{{article.title}}</div>
+          <div class="panel-sh-holder">
+            <div class="panel-date tag">
+              <span *ngFor="let tag of article.tags"> {{ tag }}</span>
+            </div>
+            <div class="panel-date">
+              {{article.created_at | date}}
+            </div>
+          </div>
+          <div class="panel-content">
+            {{ article.description.length > 100 ? (article.description | slice:0:80) +'...' : article.description  }}
+          </div>
+        </div>
+        <div class="panel-like-container">
+          <div class="panel-like-holder">
+            {{article.likes}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
 </div>

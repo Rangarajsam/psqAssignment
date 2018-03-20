@@ -1,1 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+.top-bar {
+    height:60px;
+    background:#000;
+    color:#fff;
+    text-align: center;
+    line-height: 60px;
+}
+.main-container {
+    padding: 0;
+    margin: 0;
+    height: calc(100% - 70px);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer-holder {
+    width:100%;
+    height:60px;
+    background: #fff;
+    box-shadow:0px 0px 10px 1px rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.footer-icons {
+    width: 33px;
+    height:33px;
+    cursor: pointer;
+}
+.footer-icons img {
+    display: inline;
+    text-align: center;
+}
+.footer-icons.left {
+    margin: 0 0 0 15px;
+    background: url(./assets/images/home-normal.png) no-repeat center center;
+}
+.footer-icons.left:hover {
+    background: url(./assets/images/home-hgt.png) no-repeat center center;
+}
+.footer-icons.left.current {
+    background: url(./assets/images/home-hgt.png) no-repeat center center;
+}
+.footer-icons.mid {
+    margin: 0 auto;
+    background: url(./assets/images/like-normal.png) no-repeat center center;
+}
+.footer-icons.mid:hover {
+    background: url(./assets/images/like-hgt.png) no-repeat center center;
+}
+.footer-icons.mid.current {
+    background: url(./assets/images/like-hgt.png) no-repeat center center;
+}
+.footer-icons.right {
+    margin: 0 15px 0 0;
+    background: url(./assets/images/add-normal.png) no-repeat center center;
+}
+.footer-icons.right:hover {
+    background: url(./assets/images/add-hgt.png) no-repeat center center;
+}
+.footer-icons.right.current {
+    background: url(./assets/images/add-hgt.png) no-repeat center center;
+}
+.home-cont {
+    position: relative;
+    height: calc(100% - 80px);
+    overflow: auto;
+    margin: 20px auto 0;
+}
+.panel-container {
+    width:100%;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.1);
+    background: #fff;
+    max-height: 375px;
+    min-height: 375px;
+    margin: 10px 0 10px 0;
+    overflow: hidden;
+}
+.panel-img-holder {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panel-content-holder {
+    width: calc(100% - 30px);
+    margin: 15px;
+}
+.panel-heading {
+    font-weight: bold ;
+    font-size: 16px ;
+    margin: 0 0 5px 0;
+    color: #000;
+    min-height: 24px;
+}
+.panel-sh-holder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+}
+.panel-date.tag {
+    color: #4dbf66;
+    text-transform: uppercase;
+}
+.panel-date {
+    font-size: 12px;
+    line-height: 20px;
+    color: #ccc;
+}
+.panel-content {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    color: #aaa;
+    min-height: 40px;
+}
+.panel-like-container {
+    width: 100%;
+    border-top:1px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+.panel-like-holder {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 15px 0 25px;
+    cursor: pointer;
+    color: #aaa;
+    height: 18px;
+    background: url(./assets/images/like-small-normal.png) no-repeat left center;
+}
+.panel-like-holder:hover {
+    background: url(./assets/images/like-small-hgt.png) no-repeat left center;
+}
+.panel-like-holder.popular {
+    background: url(./assets/images/like-small-hgt.png) no-repeat left center;
+}
