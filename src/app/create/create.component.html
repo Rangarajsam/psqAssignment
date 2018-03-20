@@ -1,0 +1,10 @@
+<form [formGroup]="formData" (ngSubmit)="onPublish(formData.value)">
+
+  <input type="text" name="title" formControlName="title"><br>
+  <textarea name="description" formControlName="description"></textarea><br>
+  <input type="text" name="tags" formControlName="tags"><br>
+  <input type="text" name="author" formControlName="author"><br>
+  <input type="text" name="image" formControlName="image"><br>
+  <input type="submit" value="Publish">
+
+</form>
