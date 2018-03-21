@@ -11,10 +11,10 @@
   </div>
 <div class="container home-cont">
   <div class="row">
-    <div class="col-sm-1 col-md-6 col-lg-4" *ngFor="let article of articles">
-      <div class="panel-container">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let article of articles; let i=index">
+      <div class="panel-container" (click)="goToDetails(i)" routerLink="../details">
         <div class="panel-img-holder">
-          <img [src]="article.image">
+          <img [src]="article.image" onError="this.src='./assets/images/img-not-found.jpg'">
         </div>
         <div class="panel-content-holder">
           <div class="panel-heading">{{article.title}}</div>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="panel-like-container">
-          <div class="panel-like-holder">
+          <div class="panel-like-holder" (click)="addLikes(article.likes)">
             {{article.likes}}
           </div>
         </div>

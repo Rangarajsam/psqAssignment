@@ -82,6 +82,7 @@
     min-height: 375px;
     margin: 10px 0 10px 0;
     overflow: hidden;
+    cursor: pointer;
 }
 .panel-img-holder {
     width: 100%;
@@ -126,7 +127,7 @@
 }
 .panel-like-container {
     width: 100%;
-    border-top:1px solid #ccc;
+    border-top:1px solid #eaeaea;
     display: flex;
     justify-content: flex-end;
     align-items: center;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleServiceService } from '../article-service.service';
-import {FormGroup, FormControl, FormArray} from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -15,11 +15,11 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
     this.formData=new FormGroup({
-      description:new FormControl('Description'),
-      tags:new FormControl('Category'),
-      image:new FormControl('Image Url'),
-      author:new FormControl('Author'),
-      title:new FormControl('Title')
+      description:new FormControl('', Validators.compose([Validators.required])),
+      tags:new FormControl('', Validators.compose([Validators.required])),
+      image:new FormControl('', Validators.compose([Validators.required])),
+      author:new FormControl('', Validators.compose([Validators.required])),
+      title:new FormControl('', Validators.compose([Validators.required]))
     });
   }
 

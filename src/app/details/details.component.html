@@ -1,3 +1,39 @@
-<p>
-  details works!
-</p>
+<div class="main-container details container-fluid">
+  <div class="container-fluid details-page">
+    <div class="row justify-content-center h-100">
+      <div class="col-sm-12 col-md-10 col-lg-6 details-column h-100 ">
+        <div class="panel-container details">
+          <div class="panel-img-holder details">
+            <img [src]="detailedArticle?.image" onError="this.src='./assets/images/img-not-found.jpg'">
+            <div class="details-arrow-holder">
+              <div class="details-arrow" routerLink="../home"></div>
+              <div class="details-heading h5">Details</div>
+            </div>
+            <div class="panel-like-container details">
+              <div class="panel-like-holder">
+                {{detailedArticle?.likes}}
+              </div>
+            </div>
+          </div>
+          <div class="panel-content-holder details">
+            <div class="panel-heading">{{detailedArticle?.title}}</div>
+            <div class="panel-sh-holder">
+              <div class="panel-date tag">
+                <span *ngFor="let tag of detailedArticle?.tags"> {{ tag }}</span>
+              </div>
+              <div class="panel-date">
+                {{detailedArticle?.created_at | date}}
+              </div>
+            </div>
+            <div class="panel-content details">
+              {{ detailedArticle?.description }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

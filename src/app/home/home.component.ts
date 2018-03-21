@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleServiceService } from '../article-service.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +7,6 @@ import { ArticleServiceService } from '../article-service.service';
 })
 export class HomeComponent implements OnInit {
 
-  homeTxt = "I am Home Text";
   articles;
   constructor(private articleService: ArticleServiceService) {
   }
@@ -17,6 +15,13 @@ export class HomeComponent implements OnInit {
       this.articles = data;
       console.log(this.articles);
     })
+  }
+  addLikes(curArt){
+    curArt=curArt+1;
+    this.articleService.updateArticle(curArt);
+  }
+  goToDetails(id){
+    this.articleService.setDetailsId(id);
   }
   ngOnInit() {
 
