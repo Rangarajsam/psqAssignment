@@ -4,9 +4,9 @@
   </div>
 <div class="container home-cont">
   <div class="row">
-      <ng-container *ngFor="let article of articles">
+      <ng-container *ngFor="let article of articles; let i=index">
         <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="article.likes > 0">
-          <div class="panel-container">
+          <div class="panel-container" (click)="goToDetails(i)" routerLink="../details">
             <div class="panel-img-holder">
               <img [src]="article.image" onError="this.src='./assets/images/img-not-found.jpg'">
             </div>
@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class="panel-like-container">
-              <div class="panel-like-holder">
+              <div class="panel-like-holder popular">
                 {{article.likes}}
               </div>
             </div>

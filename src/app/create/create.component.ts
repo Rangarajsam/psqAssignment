@@ -11,13 +11,15 @@ export class CreateComponent implements OnInit {
 
   formData;
   formValues;
+  successMsg;
+  failureMsg;
   constructor(private articleService: ArticleServiceService) { }
 
   ngOnInit() {
     this.formData=new FormGroup({
       description:new FormControl('', Validators.compose([Validators.required])),
       tags:new FormControl('', Validators.compose([Validators.required])),
-      image:new FormControl('', Validators.compose([Validators.required])),
+      image:new FormControl(''),
       author:new FormControl('', Validators.compose([Validators.required])),
       title:new FormControl('', Validators.compose([Validators.required]))
     });
@@ -28,8 +30,20 @@ export class CreateComponent implements OnInit {
     //{"description": "x not Texts", "tags": ["xalle", "xalle 2"], "image": "no image", "author": "sdfsd", "title": "x not"}
     this.formValues.tags=(this.formValues.tags).split(',');
     console.log(this.formValues.tags);
-    this.articleService.addArticle(this.formValues);
+    this.articleService.addArticle(this.formValues)
+    .then(showMsg => {
+      this.successMsg=true;
+      setTimeout(() => {
+        this.successMsg=false;
+      },4000);
+    },() => {
+      this.failureMsg=true;
+      setTimeout(() => {
+        this.failureMsg=false;
+      },4000);
+    });
     console.log(this.formValues);
+    this.formData.reset();
   }
 
 }

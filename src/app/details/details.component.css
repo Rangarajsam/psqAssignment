@@ -33,7 +33,7 @@
 }
 
 .panel-content.details {
-    max-height: none;
+    max-height: 320px;
     overflow: auto;
 }
 

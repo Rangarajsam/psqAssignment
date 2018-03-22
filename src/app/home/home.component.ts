@@ -8,23 +8,21 @@ import { ArticleServiceService } from '../article-service.service';
 export class HomeComponent implements OnInit {
 
   articles;
+  loaderImg;
   constructor(private articleService: ArticleServiceService) {
   }
   getArticle() {
     this.articleService.getData().subscribe(data => {
       this.articles = data;
+      this.loaderImg=false;
       console.log(this.articles);
-    })
-  }
-  addLikes(curArt){
-    curArt=curArt+1;
-    this.articleService.updateArticle(curArt);
+    });
   }
   goToDetails(id){
     this.articleService.setDetailsId(id);
   }
   ngOnInit() {
-
+    this.loaderImg=true;
     this.getArticle();
   }
 

@@ -1,16 +1,16 @@
 <div class="main-container details container-fluid">
   <div class="container-fluid details-page">
     <div class="row justify-content-center h-100">
-      <div class="col-sm-12 col-md-10 col-lg-6 details-column h-100 ">
+      <div class="col-sm-12 col-md-10 col-lg-5 details-column h-100 ">
         <div class="panel-container details">
           <div class="panel-img-holder details">
             <img [src]="detailedArticle?.image" onError="this.src='./assets/images/img-not-found.jpg'">
             <div class="details-arrow-holder">
-              <div class="details-arrow" routerLink="../home"></div>
+              <div class="details-arrow" (click)="goBack()"></div>
               <div class="details-heading h5">Details</div>
             </div>
             <div class="panel-like-container details">
-              <div class="panel-like-holder">
+              <div class="panel-like-holder popular">
                 {{detailedArticle?.likes}}
               </div>
             </div>

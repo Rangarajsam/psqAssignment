@@ -16,6 +16,14 @@ articles;
       console.log(this.articles);
     })
   }
+
+
+  goToDetails(id){
+    this.articleService.setDetailsId(id);
+  }
+
+ 
+
   ngOnInit() {
 
     this.getArticle();

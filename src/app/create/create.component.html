@@ -4,6 +4,8 @@
   </div>
 
   <div class="form-container">
+    <div class="msg-holder" *ngIf="successMsg"> Your Article is Published! </div>
+    <div class="msg-holder" *ngIf="failureMsg"> There was an error submitting your article! </div>
     <div class="form-holder">
     <form [formGroup]="formData" (ngSubmit)="onPublish(formData.value)">
       <div class="form-group">

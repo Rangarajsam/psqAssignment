@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ArticleServiceService } from '../article-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class DetailsComponent implements OnInit {
 
   detailedArticle;
   articleId;
-  constructor(private articleService: ArticleServiceService) {
+  constructor(private articleService: ArticleServiceService, private backLocation:Location) {
   }
   getArticle() {
     this.articleService.getData().subscribe(data => {
@@ -19,7 +20,9 @@ export class DetailsComponent implements OnInit {
       console.log(this.detailedArticle);
     })
   }
-
+   goBack(){
+    this.backLocation.back();
+  }
   ngOnInit() {
     this.getArticle();
   }

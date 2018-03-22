@@ -4,14 +4,18 @@
     <p>{{article.description}}</p>
   </ng-container>
 </div>-->
-
+<div class="overlay" *ngIf="loaderImg">
+  <div class="loader-holder">
+    <img src="./assets/images/loading-icon.svg">
+  </div>
+</div>
 <div class="main-container container-fluid">
   <div class="container-fluid top-bar h5">
     Home
   </div>
 <div class="container home-cont">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let article of articles; let i=index">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let article of articles; let i=index">
       <div class="panel-container" (click)="goToDetails(i)" routerLink="../details">
         <div class="panel-img-holder">
           <img [src]="article.image" onError="this.src='./assets/images/img-not-found.jpg'">
@@ -31,7 +35,7 @@
           </div>
         </div>
         <div class="panel-like-container">
-          <div class="panel-like-holder" (click)="addLikes(article.likes)">
+          <div class="panel-like-holder" (click)="addLikes(article.likes)" [ngClass]="{'popular': article.likes > 0}">
             {{article.likes}}
           </div>
         </div>
