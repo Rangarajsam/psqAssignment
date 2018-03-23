@@ -24,7 +24,8 @@ export class ArticleServiceService {
   updateArticle(data) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.put(this.articleUrl+'/'+data.id, data, options).toPromise()
+        data.tags= (data.tags===null) ? [] : data.tags;
+        return this.http.post(this.articleUrl+'?id='+data.id, data, options).toPromise()
 	           .then(this.extractData)
              .catch(this.handleErrorPromise);
     }

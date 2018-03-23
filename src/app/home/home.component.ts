@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
   goToDetails(id){
     this.articleService.setDetailsId(id);
   }
+  addLikes(curArt){
+    curArt.likes=curArt.likes+1;
+    this.articleService.updateArticle(curArt);
+  }
   ngOnInit() {
     this.loaderImg=true;
     this.getArticle();

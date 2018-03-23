@@ -16,7 +16,7 @@
 <div class="container home-cont">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let article of articles; let i=index">
-      <div class="panel-container" (click)="goToDetails(i)" routerLink="../details">
+      <div class="panel-container" (click)="goToDetails(i)" routerLink="../details"><!--(click)="goToDetails(i)" routerLink="../details"-->
         <div class="panel-img-holder">
           <img [src]="article.image" onError="this.src='./assets/images/img-not-found.jpg'">
         </div>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="panel-like-container">
-          <div class="panel-like-holder" (click)="addLikes(article.likes)" [ngClass]="{'popular': article.likes > 0}">
+          <div class="panel-like-holder" (click)="addLikes(article); $event.stopPropagation()" [ngClass]="{'popular': article.likes > 0}">
             {{article.likes}}
           </div>
         </div>
